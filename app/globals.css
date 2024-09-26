@@ -1,42 +1,32 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #FFFFFF;  /* White */
+  --foreground: #3E3E3E;  /* Dark gray for text */
+  --primary: #347928;      /* Dark green for primary accent */
+  --secondary: #FCCD2A;    /* Yellow for secondary accents */
 }
 
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background-color: var(--background);
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
 a {
-  color: inherit;
+  color: var(--primary);
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+* {
+  box-sizing: border-box;
 }
