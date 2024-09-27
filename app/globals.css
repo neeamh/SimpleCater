@@ -3,6 +3,7 @@
   --foreground: #3E3E3E;  /* Dark gray for text */
   --primary: #347928;      /* Dark green for primary accent */
   --secondary: #FCCD2A;    /* Yellow for secondary accents */
+  --secondary-hover: #E6BC27;
 }
 
 html,
@@ -12,6 +13,7 @@ body {
   overflow-y: auto;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 body {
