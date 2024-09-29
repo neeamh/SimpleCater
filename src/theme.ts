@@ -19,11 +19,10 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: 'Roboto, Arial, sans-serif',
+    fontFamily: 'Poppins, Arial, sans-serif',
     h1: {
-      fontWeight: 700,
+      fontWeight: 500,
       fontSize: '3rem',
-      color: '#3E3E3E', // Darker gray for headlines
     },
     h2: {
       fontWeight: 600,
