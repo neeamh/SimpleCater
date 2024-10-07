@@ -1,0 +1,67 @@
+/* SignIn.css */
+
+:root {
+    --background: #FFFFFF;  /* White */
+    --foreground: #3E3E3E;  /* Dark gray for text */
+    --primary: #347928;     /* Dark green for primary accent */
+    --secondary: #FCCD2A;   /* Yellow for secondary accents */
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+  
+  .sign-in-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--background);
+  }
+  
+  .sign-in-card {
+    width: 400px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: #fff;
+    border-radius: 8px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label {
+    margin-bottom: 0.5rem;
+    color: var(--foreground);
+  }
+  
+  .form-group input {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .remember-me {
+    display: flex;
+    align-items: center;
+  }
+  
+  .sign-in-button {
+    padding: 0.75rem;
+    background-color: var(--primary);
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .sign-in-button:hover {
+    background-color: var(--secondary);
+  }

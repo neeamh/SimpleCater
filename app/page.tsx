@@ -23,10 +23,10 @@ import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import DropDown from '../Components/DropDown';
 
 // Import Google Fonts
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import '@fontsource/montserrat';
 
 
 const theme = createTheme({
@@ -78,23 +78,38 @@ export default function HomePage() {
             <span style={{ color: scrolledPastHero ? '#FFF' : 'var(--secondary)' }}>Cater</span>
           </Typography>
           {/* Sign In Button */}
-          <Button
-            variant="outlined"
-            onClick={() => router.push('/SignIn')}
+          <Box 
             sx={{
-              borderColor: scrolledPastHero ? '#FFF' : 'var(--primary)',
-              color: scrolledPastHero ? 'var(--primary)':'#FFF' ,
-              backgroundColor: scrolledPastHero ? '#fff':'var(--primary)' ,
-              textTransform: 'none',
-              '&:hover': {
-                backgroundColor: 'var(--secondary)',
-                color: '#fff',
-                borderColor:'var(--secondary)',
-              },
+              display: 'flex',         // Use flexbox to position items in a row
+              alignItems: 'center',     // Center vertically
+              gap: '1rem', 
             }}
           >
-            Sign In
-          </Button>
+            <Button
+              variant="outlined"
+              onClick={() => router.push('/gettingStarted/Catering/SignIn')}
+              sx={{
+                borderColor: scrolledPastHero ? '#FFF' : 'var(--primary)',
+                color: scrolledPastHero ? 'var(--primary)':'#FFF' ,
+                backgroundColor: scrolledPastHero ? '#fff':'var(--primary)' ,
+                textTransform: 'none',
+                '&:hover': {
+                  backgroundColor: 'var(--secondary)',
+                  color: '#fff',
+                  borderColor:'var(--secondary)',
+                },
+              }}
+            >
+              Sign In
+            </Button>
+            <DropDown 
+              items={[
+                { label:'Sign In', path:'/gettingStarted/Caterer/SignIn' },
+                { label:'Register', path:'/gettingStarted/Caterer/registry' }
+              ]} 
+              title="I'm a Caterer"
+            />
+          </Box>
         </Toolbar>
       </AppBar>
 
@@ -404,7 +419,7 @@ export default function HomePage() {
           </Typography>
           <Button
             variant="contained"
-            onClick={() => router.push('/SignIn')}
+            onClick={() => router.push('/gettingStarted/Catering/SignIn')}
             sx={{
               backgroundColor: 'var(--secondary)',
               color: '#000',

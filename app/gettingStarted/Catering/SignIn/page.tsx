@@ -1,8 +1,9 @@
+"use client";
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Checkbox from '@mui/material/Checkbox';
-import CssBaseline from '@mui/material/CssBaseline';
+// import CssBaseline from '@mui/material/CssBaseline';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Divider from '@mui/material/Divider';
 import FormLabel from '@mui/material/FormLabel';
@@ -10,52 +11,15 @@ import FormControl from '@mui/material/FormControl';
 import Link from '@mui/material/Link';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
-import Stack from '@mui/material/Stack';
-import MuiCard from '@mui/material/Card';
-import { styled } from '@mui/material/styles';
-import ForgotPassword from './ForgotPassword';
-import { GoogleIcon, FacebookIcon, SitemarkIcon } from './CustomIcons';
-import AppTheme from './shared-theme/AppTheme';
-import ColorModeSelect from './shared-theme/ColorModeSelect';
-import { applyStyles } from './shared-theme/themeUtils';
+// import Stack from '@mui/material/Stack';
+// import MuiCard from '@mui/material/Card';
+// import { styled } from '@mui/material/styles';
+import Card from '@mui/material/Card';
+// import ForgotPassword from './ForgotPassword';
+// import { GoogleIcon, FacebookIcon, SitemarkIcon } from './CustomIcons';
+// import AppTheme from '../shared-theme/AppTheme';
+// import ColorModeSelect from '../shared-theme/ColorModeSelect';
 
-const Card = styled(MuiCard)(({ theme }) => ({
-  display: 'flex',
-  flexDirection: 'column',
-  alignSelf: 'center',
-  width: '100%',
-  padding: theme.spacing(4),
-  gap: theme.spacing(2),
-  margin: 'auto',
-  [theme.breakpoints.up('sm')]: {
-    maxWidth: '450px',
-  },
-  boxShadow:
-    'hsla(220, 30%, 5%, 0.05) 0px 5px 15px 0px, hsla(220, 25%, 10%, 0.05) 0px 15px 35px -5px',
-  ...theme.applyStyles('dark', {
-    boxShadow:
-      'hsla(220, 30%, 5%, 0.5) 0px 5px 15px 0px, hsla(220, 25%, 10%, 0.08) 0px 15px 35px -5px',
-  }),
-}));
-
-const SignInContainer = styled(Stack)(({ theme }) => ({
-  padding: 20,
-  marginTop: '10vh',
-  '&::before': {
-    content: '""',
-    display: 'block',
-    position: 'absolute',
-    zIndex: -1,
-    inset: 0,
-    backgroundImage:
-      'radial-gradient(ellipse at 50% 50%, hsl(210, 100%, 97%), hsl(0, 0%, 100%))',
-    backgroundRepeat: 'no-repeat',
-    ...theme.applyStyles('dark', {
-      backgroundImage:
-        'radial-gradient(at 50% 50%, hsla(210, 100%, 16%, 0.5), hsl(220, 30%, 5%))',
-    }),
-  },
-}));
 
 export default function SignIn(props: { disableCustomTheme?: boolean }) {
   const [emailError, setEmailError] = React.useState(false);
@@ -109,18 +73,25 @@ export default function SignIn(props: { disableCustomTheme?: boolean }) {
   };
 
   return (
-    <AppTheme {...props}>
-      <CssBaseline enableColorScheme />
-      <SignInContainer direction="column" justifyContent="space-between">
-        <ColorModeSelect sx={{ position: 'fixed', top: '1rem', right: '1rem' }} />
-        <Card variant="outlined">
-          <SitemarkIcon />
+  
+      <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: "100vh", width: "100vw"}}>
+        <Card variant="outlined" sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          padding: 6,
+          width: '25%',
+          gap: 2,
+          borderRadius: 4,
+          height: 'max-content',
+          boxShadow: 'rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset',         
+        }}>
+     
           <Typography
             component="h1"
             variant="h4"
             sx={{ width: '100%', fontSize: 'clamp(2rem, 10vw, 2.15rem)' }}
           >
-            Sign in
+            Welcome Back!
           </Typography>
           <Box
             component="form"
@@ -158,7 +129,7 @@ export default function SignIn(props: { disableCustomTheme?: boolean }) {
                   component="button"
                   onClick={handleClickOpen}
                   variant="body2"
-                  sx={{ alignSelf: 'baseline' }}
+                  sx={{ alignSelf: 'baseline', textDecoration:'none',}}
                 >
                   Forgot your password?
                 </Link>
@@ -182,7 +153,7 @@ export default function SignIn(props: { disableCustomTheme?: boolean }) {
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
             />
-            <ForgotPassword open={open} handleClose={handleClose} />
+          {/*  <ForgotPassword open={open} handleClose={handleClose} /> */}
             <Button
               type="submit"
               fullWidth
@@ -197,7 +168,7 @@ export default function SignIn(props: { disableCustomTheme?: boolean }) {
                 <Link
                   href="/material-ui/getting-started/templates/sign-in/"
                   variant="body2"
-                  sx={{ alignSelf: 'center' }}
+                  sx={{ alignSelf: 'center', textDecoration: 'none', }}
                 >
                   Sign up
                 </Link>
@@ -211,7 +182,7 @@ export default function SignIn(props: { disableCustomTheme?: boolean }) {
               fullWidth
               variant="outlined"
               onClick={() => alert('Sign in with Google')}
-              startIcon={<GoogleIcon />}
+              
             >
               Sign in with Google
             </Button>
@@ -220,13 +191,13 @@ export default function SignIn(props: { disableCustomTheme?: boolean }) {
               fullWidth
               variant="outlined"
               onClick={() => alert('Sign in with Facebook')}
-              startIcon={<FacebookIcon />}
+              // startIcon={<FacebookIcon />}
             >
               Sign in with Facebook
             </Button>
           </Box>
         </Card>
-      </SignInContainer>
-    </AppTheme>
+      </Box>
+  
   );
 }
